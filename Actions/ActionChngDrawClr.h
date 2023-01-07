@@ -4,7 +4,7 @@
 #include "../Figures/CFigure.h"
 
 class ActionChngDrawClr : public Action {
-	ActionType inputColorAction;
+	//ActionType inputColorAction;
 	color DrawClr;
 	
 	bool IsColor;

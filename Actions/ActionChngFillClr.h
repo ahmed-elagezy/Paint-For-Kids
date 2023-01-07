@@ -3,7 +3,7 @@
 #include "Action.h"
 
 class ActionChngFillClr : public Action {
-	ActionType inputColorAction;
+	//ActionType inputColorAction;
 	color FillClr;
 	
 	bool IsColor;
