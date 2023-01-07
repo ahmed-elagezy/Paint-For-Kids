@@ -31,6 +31,8 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_CHNG_BKGRND_CLR,
 	ITM_RESIZE,
 	//TODO: Add more items names here
+	ITM_SEND_BACK, //Send a figure to the back of all figures
+	ITM_SEND_FRONT, //Send a figure to the front of all figures
 	ITM_SAVE,       //Save item in menu
 	ITM_LOAD,
 	ITM_TO_PLAY,

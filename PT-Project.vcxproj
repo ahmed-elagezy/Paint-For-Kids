@@ -144,6 +144,8 @@
     <ClCompile Include="Actions\ActionSelectShape.cpp" />
     <ClCompile Include="Actions\BackToDraw.cpp" />
     <ClCompile Include="Actions\PickByType.cpp" />
+    <ClCompile Include="Actions\SendBack.cpp" />
+    <ClCompile Include="Actions\BringFront.cpp" />
     <ClCompile Include="Actions\ToPlayMode.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
@@ -207,6 +209,8 @@
     <ClInclude Include="Actions\ActionSelectShape.h" />
     <ClInclude Include="Actions\BackToDraw.h" />
     <ClInclude Include="Actions\PickByType.h" />
+    <ClInclude Include="Actions\SendBack.h" />
+    <ClInclude Include="Actions\BringFront.h" />
     <ClInclude Include="Actions\ToPlayMode.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />

@@ -10,6 +10,8 @@
 #include "Actions/ActionChngFillClr.h" 
 #include "Actions/ActionChngBkGrndClr.h"
 #include "Actions/ActionResize.h"
+#include "Actions/SendBack.h"
+#include "Actions/BringFront.h"
 #include "Actions/ActionSave.h"
 #include "Actions/ActionLoad.h"
 #include "Actions/ToPlayMode.h"
@@ -110,6 +112,14 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			newAct = new ActionResize(this);
 			break;
 
+		case SEND_BACK:
+			newAct = new SendBack(this);
+			break;
+
+		case BRNG_FRONT:
+			newAct = new BringFront(this);
+			break;
+
 		case SAVE:
 			newAct = new ActionSave(this);
 			break;
@@ -196,6 +206,15 @@ void ApplicationManager::DeleteShape() {
 				break;
 		}
 	}
+}
+
+// Return index of selected figure
+int ApplicationManager::getSelectedFigure()
+{
+	for (int i = 0; i < FigList.size(); i++)
+		if (FigList[i]->IsSelected())
+			return i;
+	return -1;
 }
 
 //int ApplicationManager::getFigCount()const {
@@ -386,7 +405,7 @@ ApplicationManager::~ApplicationManager()
 }
 
 //==================================================================================//
-//							Save And load Functions									//
+//							     Save Function							            	//
 //==================================================================================//
 
 void ApplicationManager::saveAll(ofstream& Out) {
@@ -404,4 +423,32 @@ void ApplicationManager::clearFigList() {
 	for (int i = 0; i < FigList.size(); i++)
 		FigList[i] = NULL;
 	FigCount = 0;
+}
+
+//==================================================================================//
+//						      	Send To Back									    //
+//==================================================================================//
+
+void ApplicationManager::SendToBack(int selectedIndex)
+{
+	if (selectedIndex != 0)
+	{
+		CFigure* spare = FigList[0];
+		FigList[0] = FigList[selectedIndex];
+		FigList[selectedIndex] = spare;
+	}
+}
+
+//==================================================================================//
+//							Bring To Front											//
+//==================================================================================//
+
+void ApplicationManager::BringToFront(int selectedIndex)
+{
+	if (selectedIndex != FigList.size() - 1)
+	{
+		CFigure* tmp = FigList[FigList.size() - 1];
+		FigList[FigList.size() - 1] = FigList[selectedIndex];
+		FigList[selectedIndex] = tmp;
+	}
 }

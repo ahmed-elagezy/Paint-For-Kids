@@ -92,6 +92,8 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_SELEC: return SELEC_SHAPE; 
 			case ITM_DELE: return DELETE_SHAPE;
 			case ITM_RESIZE: return RESIZE;
+			case ITM_SEND_BACK: return SEND_BACK;
+			case ITM_SEND_FRONT: return BRNG_FRONT;
 			case ITM_SAVE: return SAVE;
 			case ITM_LOAD:return LOAD;
 			case ITM_TO_PLAY:return TO_PLAY;
@@ -235,6 +237,8 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\Resize.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\save.jpeg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\load.jpg";
+	MenuItemImages[ITM_SEND_BACK] = "images\\MenuItems\\sendtoback.jpg";
+	MenuItemImages[ITM_SEND_FRONT] = "images\\MenuItems\\bringtofront.jpg";
 	MenuItemImages[ITM_TO_PLAY] = "images\\MenuItems\\game.jpg";
 	MenuItemImages[ITM_CHNG_DRAW_CLR] = "images\\MenuItems\\iucon.jpg";
 	MenuItemImages[ITM_CHNG_FILL_CLR] = "images\\MenuItems\\fillc.jpg";

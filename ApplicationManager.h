@@ -54,7 +54,10 @@ public:
 	void changeDrawColor(color drawClr);
 	bool GetColor(color&);
 	bool AnySelected();
-	void  unselectAll();
+	void unselectAll();
+	int getSelectedFigure(); // Return selected Figure
+	void SendToBack(int selectedIndex); // Action Send to back 
+	void BringToFront(int selectedIndex);// Action Bring to Forward 
 	//void displayAllFigures();
 
 	string getRandomFigure(int& count);   //radwa

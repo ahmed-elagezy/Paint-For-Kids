@@ -6,5 +6,5 @@ BackToDraw::BackToDraw(ApplicationManager* pApp) :Action(pApp) {}
 void BackToDraw::Execute() {
 	GUI* pGUI = pManager->GetGUI();
 	pGUI->CreateDrawToolBar();
-	pGUI->PrintMessage("Welcome back");
+	pGUI->PrintMessage("Welcome back to draw mode");
 }
