@@ -7,6 +7,8 @@
 CSquare::CSquare()
 {
 	this->Selected = false;
+	this->isHidden = false;
+
 };
 
 CSquare::CSquare(Point P1, int len, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)

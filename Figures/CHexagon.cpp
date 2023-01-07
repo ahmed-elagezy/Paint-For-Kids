@@ -2,6 +2,8 @@
 
 CHexagon::CHexagon() {
 	this->Selected = false;
+	this->isHidden = false;
+
 }
 
 CHexagon::CHexagon(Point P1, int Len, int _Height, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)

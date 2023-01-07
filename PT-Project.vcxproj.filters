@@ -205,6 +205,12 @@
     <ClCompile Include="Actions\BringFront.cpp">
       <Filter>Action Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\PickByColor.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="CMUgraphicsLib\colors.cpp">
+      <Filter>CMUgraphicsLib</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -346,10 +352,7 @@
     <ClInclude Include="Actions\BackToDraw.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\SendBack.h">
-      <Filter>Action Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Actions\BringFront.h">
+    <ClInclude Include="Actions\PickByColor.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
   </ItemGroup>

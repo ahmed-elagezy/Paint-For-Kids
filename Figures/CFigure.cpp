@@ -6,7 +6,7 @@ CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
 	Selected = false;
-	//isHidden = false;
+	isHidden = false;
 }
 
 void CFigure::SetSelected(bool s)
@@ -105,6 +105,37 @@ color CFigure::StringColor(string s)const {
 	if (s == "HONEYDEW")
 		return HONEYDEW;
 	return BLACK;
+}
+
+string CFigure::GetFillClr()
+{
+	if (FigGfxInfo.isFilled)
+		return colorToString(FigGfxInfo.FillClr);
+	else
+		return "NON-FILLED";
+}
+
+string CFigure::colorToString(color c)
+{
+	if (c == BLACK) return "BLACK";
+	else if (c == BLUE) return "BLUE";
+	else if (c == WHITE) return "WHITE";
+	else if (c == RED) return "RED";
+	else if (c == YELLOW) return "YELLOW";
+	else if (c == GREEN) return "GREEN";
+	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
+	else if (c == MAGENTA) return "MAGENTA";
+	else if (c == TURQUOISE) return "TURQUOISE";
+	else if (c == SKYBLUE) return "SKYBLUE";
+	return "COLOR";
+}
+
+void CFigure::HideShape() {
+	isHidden = true;
+}
+
+void CFigure::displayShape() {
+	isHidden = false;
 }
 
 //void CFigure::setGFX()

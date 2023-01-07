@@ -2,6 +2,8 @@
 
 CRectangle::CRectangle() {
 	this->Selected = false;
+	this->isHidden = false;
+
 }
 
 CRectangle::CRectangle(Point _ul, Point _lr, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)

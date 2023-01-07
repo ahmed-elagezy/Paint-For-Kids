@@ -62,6 +62,11 @@ public:
 
 	string getRandomFigure(int& count);   //radwa
 	void showAllFigure();
+	int getFigCount() const;
+	CFigure* ApplicationManager::getAnyFigure();
+	bool ApplicationManager::hasDifferentColors();
+	CFigure* getFigList(int)const;
+
 };
 
 #endif
