@@ -143,6 +143,7 @@
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSelectShape.cpp" />
     <ClCompile Include="Actions\BackToDraw.cpp" />
+    <ClCompile Include="Actions\pickByBoth.cpp" />
     <ClCompile Include="Actions\PickByColor.cpp" />
     <ClCompile Include="Actions\PickByType.cpp" />
     <ClCompile Include="Actions\SendBack.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSelectShape.h" />
     <ClInclude Include="Actions\BackToDraw.h" />
+    <ClInclude Include="Actions\pickByBoth.h" />
     <ClInclude Include="Actions\PickByColor.h" />
     <ClInclude Include="Actions\PickByType.h" />
     <ClInclude Include="Actions\SendBack.h" />
