@@ -33,10 +33,22 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	//TODO: Add more items names here
 	ITM_SAVE,       //Save item in menu
 	ITM_LOAD,
+	ITM_TO_PLAY,
 	ITM_EXIT,		//Exit item
 	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
+};
+
+enum PlayMenuItem //The items of the Play menu (you should add more items)
+{
+	ITM_BY_TYPE,	//Play and hide by type item in menu
+	ITM_BY_COLOR,	//Play and hide by color item in menu
+	ITM_BY_BOTH,	//Play and hide by both color and type item in menu
+	ITM_TO_DRAW,	// RETURN To draw mode item in menu
+
+	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
+
 };
 
 enum ColorMenuItem //The items of the Color menu (you should add more items)
@@ -52,16 +64,6 @@ enum ColorMenuItem //The items of the Color menu (you should add more items)
 
 };
 
-enum PlayMenuItem //The items of the Play menu (you should add more items)
-{
-	//Note: Items are ordered here as they appear in menu
-	//If you want to change the menu items order, change the order here
-	
-	//TODO: Add more items names here
-
-	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
-};
 enum SizeMenuItem // The items of size
 {
 	ITM_BACK,

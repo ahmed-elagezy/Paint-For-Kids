@@ -6,9 +6,8 @@ CFigure::CFigure(GfxInfo FigureGfxInfo)
 { 
 	FigGfxInfo = FigureGfxInfo;	//Default status is non-filled.
 	Selected = false;
-	isHidden = false;
+	//isHidden = false;
 }
-
 
 void CFigure::SetSelected(bool s)
 {	Selected = s; }
@@ -27,14 +26,25 @@ void CFigure::ChngFillClr(color Fclr)
 double CFigure::CalcDistance(Point A, Point B) const {
 	return sqrt((A.x - B.x)*(A.x - B.x) + (A.y - B.y)*(A.y - B.y));
 }
-bool CFigure::isShapeHiddin() {
-	return isHidden;
+//bool CFigure::isShapeHiddin() {
+//	return isHidden;
+//}
+//void CFigure::HideShape() {
+//	isHidden = true;
+//}
+//void CFigure::displayShape() {
+//	isHidden = false;
+//}
+
+//radwa
+void CFigure::show(bool x)
+{
+	shown = x;						//hide
 }
-void CFigure::HideShape() {
-	isHidden = true;
-}
-void CFigure::displayShape() {
-	isHidden = false;
+
+int CFigure::getHiddenValue()
+{
+	return !shown;
 }
 
 string CFigure::ColorString(color c)

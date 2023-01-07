@@ -94,6 +94,7 @@ ActionType GUI::MapInputToActionType() const
 			case ITM_RESIZE: return RESIZE;
 			case ITM_SAVE: return SAVE;
 			case ITM_LOAD:return LOAD;
+			case ITM_TO_PLAY:return TO_PLAY;
 			case ITM_CHNG_DRAW_CLR:return CHNG_DRAW_CLR;
 			case ITM_CHNG_FILL_CLR:return CHNG_FILL_CLR;
 			case ITM_CHNG_BKGRND_CLR:return CHNG_BK_CLR;
@@ -170,10 +171,18 @@ ActionType GUI::MapInputToActionType() const
 	}
 	else 	//GUI is in PLAY mode
 	{
-		///TODO:
-		//perform checks similar to Draw mode checks above
-		//and return the correspoding action
-		return TO_PLAY;	//just for now. This should be updated
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			switch (ClickedItemOrder)
+			{
+			case ITM_BY_TYPE:return P_BY_TYPE;
+			case ITM_BY_COLOR:return P_BY_COLOR;
+			case ITM_BY_BOTH:return P_BY_BOTH;
+			case ITM_TO_DRAW:return TO_DRAW;
+			default: return EMPTY;
+			}
+		}
 	}	
 
 }
@@ -226,6 +235,7 @@ void GUI::CreateDrawToolBar() const
 	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\Resize.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\save.jpeg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\load.jpg";
+	MenuItemImages[ITM_TO_PLAY] = "images\\MenuItems\\game.jpg";
 	MenuItemImages[ITM_CHNG_DRAW_CLR] = "images\\MenuItems\\iucon.jpg";
 	MenuItemImages[ITM_CHNG_FILL_CLR] = "images\\MenuItems\\fillc.jpg";
 	MenuItemImages[ITM_CHNG_BKGRND_CLR] = "images\\MenuItems\\download (1).jpg";	
@@ -283,9 +293,31 @@ void GUI::CreateColorToolBar() const
 
 void GUI::CreatePlayToolBar() const
 {
+	CreateToolBar();
 	UI.InterfaceMode = MODE_PLAY;
 	///TODO: write code to create Play mode menu
-}
+	//pWind->SetPen(UI.BkGrndColor, 1);
+	//pWind->SetBrush(UI.BkGrndColor);
+
+
+		//pWind->DrawRectangle(0, 0, UI.width, UI.height - UI.ToolBarHeight);
+		//pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+	string PlayMenuItems[PLAY_ITM_COUNT];
+	PlayMenuItems[ITM_BY_TYPE] = "images\\MenuItems\\byType.jpg";
+	PlayMenuItems[ITM_BY_COLOR] = "images\\MenuItems\\byClr.jpg";
+	PlayMenuItems[ITM_BY_BOTH] = "images\\MenuItems\\byBoth.jpg";
+	PlayMenuItems[ITM_TO_DRAW] = "images\\MenuItems\\back.jpg";
+
+	for (int i = 0; i < PLAY_ITM_COUNT; i++)
+		pWind->DrawImage(PlayMenuItems[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+
+
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
+}// end of play menu
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void GUI::ClearDrawArea() const

@@ -19,6 +19,7 @@ public:
 	void CCircle::Resize(GUI* pGUI, float size);
 	virtual void Load(ifstream& SavedFile);
 	virtual void Save(ofstream& SavedFile);
+	string getFigureName()const;
 };
 
 #endif

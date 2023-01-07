@@ -12,6 +12,11 @@ CHexagon::CHexagon(Point P1, int Len, int _Height, GfxInfo FigureGfxInfo) :CFigu
 	ID = ++HexaID;
 }
 
+string CHexagon::getFigureName()const
+{
+	return "HEXAGON";
+}
+
 int CHexagon::HexaID = 0;
 
 void CHexagon::DrawMe(GUI* pGUI) const

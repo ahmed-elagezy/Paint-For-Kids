@@ -55,9 +55,10 @@ public:
 	bool GetColor(color&);
 	bool AnySelected();
 	void  unselectAll();
-	void displayAllFigures();
+	//void displayAllFigures();
 
-
+	string getRandomFigure(int& count);   //radwa
+	void showAllFigure();
 };
 
 #endif

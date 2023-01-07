@@ -15,6 +15,12 @@ CSquare::CSquare(Point P1, int len, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInf
 	length = len;
 	ID = ++sqrID;
 }
+
+string CSquare::getFigureName() const
+{
+	return "SQUARE";
+}
+
 int CSquare::sqrID = 0;
 	
 

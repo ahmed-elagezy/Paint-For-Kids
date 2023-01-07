@@ -14,6 +14,12 @@ CCircle::CCircle(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxIn
 	Radius = CalcDistance(Center, Edge);
 	ID = ++CirID;
 }
+
+string CCircle::getFigureName()const
+{
+	return "CIRCLE";
+}
+
 int CCircle::CirID = 0;
 
 void CCircle::DrawMe(GUI* pGUI) const

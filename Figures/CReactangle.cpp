@@ -10,6 +10,12 @@ CRectangle::CRectangle(Point _ul, Point _lr, GfxInfo FigureGfxInfo) :CFigure(Fig
 	lr = _lr;
 	ID = ++RecID;
 }
+
+string CRectangle::getFigureName() const
+{
+	return "RECTANGLE";
+}
+
 int CRectangle::RecID = 0;
 
 void CRectangle::DrawMe(GUI* pGUI) const

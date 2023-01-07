@@ -39,6 +39,9 @@ enum ActionType //The actions supported (you can add more if needed)
 
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY,		//Switch interface to Play mode
+	P_BY_TYPE,		//Pick and hide, by type
+	P_BY_COLOR,		//Pick and hide, by color
+	P_BY_BOTH,		//Pick and hide, by type and color
 	BACK,
 	HALF,
 	QUARTER,

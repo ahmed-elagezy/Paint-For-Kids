@@ -12,6 +12,12 @@ CTriangle::CTriangle(Point P1, Point P2,Point P3, GfxInfo FigureGfxInfo) :CFigur
 	bottom_left = P3;
 	ID = ++TriID;
 }
+
+string CTriangle::getFigureName()const
+{
+	return "TRIANGLE";
+}
+
 int CTriangle::TriID = 0;
 
 void CTriangle::DrawMe(GUI* pGUI) const

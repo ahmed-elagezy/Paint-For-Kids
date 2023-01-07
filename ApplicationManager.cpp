@@ -12,10 +12,13 @@
 #include "Actions/ActionResize.h"
 #include "Actions/ActionSave.h"
 #include "Actions/ActionLoad.h"
+#include "Actions/ToPlayMode.h"
+#include "Actions/PickByType.h"
+#include "Actions/BackToDraw.h"
 #include <vector>
 #include "iostream"
 #include "fstream"
-
+#include <string>
 
 
 //Constructor
@@ -97,7 +100,6 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 
 		case CHNG_FILL_CLR:
 			newAct = new ActionChngFillClr(this);
-			flag = 1;
 			break;
 
 		case CHNG_BK_CLR:
@@ -116,13 +118,22 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			newAct = new ActionLoad(this);
 			break;
 
-		case EXIT:
-			///create ExitAction here
-			
+		case TO_PLAY:
+			newAct = new ToPlayMode(this);
+			break;
+		
+		case P_BY_TYPE:
+			newAct = new PickByType(this);
 			break;
 
-		
-		
+		case TO_DRAW:
+			newAct = new BackToDraw(this);
+			break;
+
+		case EXIT:
+			///create ExitAction here
+			break;
+
 		case STATUS:	//a click on the status bar ==> no action
 			return NULL;
 			break;
@@ -164,7 +175,6 @@ int ApplicationManager::GetIndex(CFigure* c)
 
 
 
-
 CFigure *ApplicationManager::GetFigure(int x, int y) const
 {
 	//If a figure is found return a pointer to it.
@@ -187,6 +197,16 @@ void ApplicationManager::DeleteShape() {
 		}
 	}
 }
+
+//int ApplicationManager::getFigCount()const {
+//	return FigList.size();
+//}
+//
+//CFigure* ApplicationManager::getFigList(int i) const
+//{
+//	return FigList[i];
+//}
+
 void ApplicationManager::changeDrawColor(color drawClr)
 {
 	for (int i = 0; i < FigList.size(); i++)
@@ -283,12 +303,60 @@ bool ApplicationManager::GetColor(color& inputColor)
 
 	return isColor;
 }
-void ApplicationManager::displayAllFigures()
+
+//void ApplicationManager::displayAllFigures()
+//{
+//	for (int i = 0; i < FigCount; i++) {
+//		FigList[i]->displayShape();
+//	}
+//}
+
+string ApplicationManager::getRandomFigure(int& count)		//radwa
 {
-	for (int i = 0; i < FigCount; i++) {
-		FigList[i]->displayShape();
+	string figureName;
+	int rondom;
+	count = 0;
+
+	if (FigList.size() != 0)
+	{
+		if (FigList.size() != 1)
+		{
+			rondom = rand() % (FigList.size());
+			figureName = FigList[rondom]->getFigureName();
+			for (int i = 0; i < FigList.size(); i++)
+			{
+				if (FigList[rondom]->getFigureName() == FigList[i]->getFigureName())
+				{
+					count++;
+				}
+
+			}
+		}
+		else
+		{
+			return FigList[0]->getFigureName();
+			count = 1;
+		}
+
+		return figureName;
+
+	}
+	else
+	{
+		return "empty";
+	}
+
+}////////////////////////////////////////////////////////////
+
+void ApplicationManager::showAllFigure()
+{
+	for (int i = 0; i < FigList.size(); i++)
+	{
+		FigList[i]->show(true);
 	}
 }
+
+
 //////
 //==================================================================================//
 //							Interface Management Functions							//
@@ -296,14 +364,11 @@ void ApplicationManager::displayAllFigures()
 
 //Draw all figures on the user interface
 void ApplicationManager::UpdateInterface() const
-{    ///alaa
+{
 	pGUI->ClearDrawArea();
 	for(int i=0; i<FigList.size(); i++)
 	{
-		//if (!FigList[i]->isShapeHiddin())//********v3**********//****v4 reem
-		//{
-			FigList[i]->DrawMe(pGUI); 	//Call Draw function (virtual member fn)
-		//}
+		FigList[i]->DrawMe(pGUI); 	//Call Draw function (virtual member fn)
 	}	
 }
 ////////////////////////////////////////////////////////////////////////////////////

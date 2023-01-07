@@ -142,6 +142,9 @@
     <ClCompile Include="Actions\ActionResize.cpp" />
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSelectShape.cpp" />
+    <ClCompile Include="Actions\BackToDraw.cpp" />
+    <ClCompile Include="Actions\PickByType.cpp" />
+    <ClCompile Include="Actions\ToPlayMode.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -202,6 +205,9 @@
     <ClInclude Include="Actions\ActionResize.h" />
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSelectShape.h" />
+    <ClInclude Include="Actions\BackToDraw.h" />
+    <ClInclude Include="Actions\PickByType.h" />
+    <ClInclude Include="Actions\ToPlayMode.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />

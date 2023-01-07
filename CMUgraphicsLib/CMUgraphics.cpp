@@ -545,7 +545,7 @@ clicktype window::WaitMouseClick(int &iX, int &iY) {
     clicktype ctTmp;
 
 	while(true) {
-        ProcessMessage(); // Kludge
+        ProcessMessage(); 
 
 	    mqueTmp = mqueInput.Remove();
 	    if(mqueTmp != NULL) {

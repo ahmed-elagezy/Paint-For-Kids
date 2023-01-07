@@ -19,5 +19,6 @@ public:
 	virtual void Load(ifstream& SavedFile);
 	virtual void Save(ofstream& SavedFile);
 	void CRectangle::Resize(GUI* pGUI,float);
+	string getFigureName()const;
 };
 #endif

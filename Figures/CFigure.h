@@ -1,5 +1,6 @@
 #ifndef CFIGURE_H
 #define CFIGURE_H
+#include <string>
 
 #include "..\defs.h"
 #include "..\GUI\GUI.h"
@@ -17,6 +18,7 @@ protected:
 	bool isHidden;
 	color DrwColor, FillColor;
 	bool IsFill;
+	bool shown;
 	
 	/// Add more parameters if needed.
 
@@ -32,10 +34,12 @@ public:
 	void ChngFillClr(color Fclr);	//changes the figure's filling color
 	virtual void PrintInfo(GUI* pGUI, int r) = 0;
 	virtual bool BelongTo(int x, int y) = 0;
-	bool isShapeHiddin();
-	void HideShape();
-	void displayShape();
-
+	//bool isShapeHiddin();
+	//void HideShape();
+	//void displayShape();
+	int getHiddenValue();
+	void show(bool x);     //radwa
+	virtual string getFigureName() const = 0;  ///radwa	
 	
 
 
@@ -51,7 +55,7 @@ public:
 
 	string ColorString(color c); //validate the name of the color
 	color StringColor(string s) const;
-	void setGFX();
+	/*void setGFX();*/
 	virtual void Save(ofstream &OutFile)=0;	//Save the figure parameters to the file
 	virtual void Load(ifstream &Infile)=0;	//Load the figure parameters to the file
 

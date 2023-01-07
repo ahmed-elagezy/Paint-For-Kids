@@ -20,6 +20,7 @@ public:
 	virtual void Load(ifstream& SavedFile);
 	virtual void Save(ofstream& SavedFile);
 	void Resize(GUI* pGUI, float size);
+	string getFigureName()const;
 };
 
 #endif
