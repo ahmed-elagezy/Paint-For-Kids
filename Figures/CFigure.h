@@ -43,7 +43,7 @@ public:
 
 
 	string CFigure::GetFillClr();
-	string CFigure::colorToString(color c);
+	//string CFigure::colorToString(color c);
 	void CFigure::displayShape();
 	
 

@@ -6,7 +6,6 @@
 #include "..\Figures\CTriangle.h";
 #include "..\Figures\CCircle.h";
 #include "..\Figures\CHexagon.h";
-
 #include "..\GUI\GUI.h"
 #include<fstream>
 #include <iostream>
@@ -102,5 +101,10 @@ color ActionLoad::StringColor(string s)const {
 		return IVORY;
 	if (s == "HONEYDEW")
 		return HONEYDEW;
-	return BLACK;
+	if (s == "PINK")
+		return PINK;
+	if (s == "MAROON")
+		return MAROON;
+	if (s == "PURPLE")
+		return PURPLE;
 }

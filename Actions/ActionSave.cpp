@@ -57,5 +57,11 @@ string ActionSave::ColorString(color c)
 		return "LIGHTSTEELBLUE";
 	if ((c.ucBlue == IVORY.ucBlue) && (c.ucGreen == IVORY.ucGreen) && (c.ucRed == IVORY.ucRed))
 		return"IVORY";
+	if ((c.ucBlue == PINK.ucBlue) && (c.ucGreen == PINK.ucGreen) && (c.ucRed == PINK.ucRed))
+		return"PINK";
+	if ((c.ucBlue == MAROON.ucBlue) && (c.ucGreen == MAROON.ucGreen) && (c.ucRed == MAROON.ucRed))
+		return"MAROON";
+	if ((c.ucBlue == PURPLE.ucBlue) && (c.ucGreen == PURPLE.ucGreen) && (c.ucRed == PURPLE.ucRed))
+		return"PURPLE";
 	return "NO-FILL";
 }

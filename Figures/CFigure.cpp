@@ -26,15 +26,6 @@ void CFigure::ChngFillClr(color Fclr)
 double CFigure::CalcDistance(Point A, Point B) const {
 	return sqrt((A.x - B.x)*(A.x - B.x) + (A.y - B.y)*(A.y - B.y));
 }
-//bool CFigure::isShapeHiddin() {
-//	return isHidden;
-//}
-//void CFigure::HideShape() {
-//	isHidden = true;
-//}
-//void CFigure::displayShape() {
-//	isHidden = false;
-//}
 
 //radwa
 void CFigure::show(bool x)
@@ -73,6 +64,12 @@ string CFigure::ColorString(color c)
 		return "LIGHTSTEELBLUE";
 	if ((c.ucBlue == IVORY.ucBlue) && (c.ucGreen == IVORY.ucGreen) && (c.ucRed == IVORY.ucRed))
 		return"IVORY";
+	if ((c.ucBlue == PINK.ucBlue) && (c.ucGreen == PINK.ucGreen) && (c.ucRed == PINK.ucRed))
+		return"PINK";
+	if ((c.ucBlue == MAROON.ucBlue) && (c.ucGreen == MAROON.ucGreen) && (c.ucRed == MAROON.ucRed))
+		return"MAROON";
+	if ((c.ucBlue == PURPLE.ucBlue) && (c.ucGreen == PURPLE.ucGreen) && (c.ucRed == PURPLE.ucRed))
+		return"PURPLE";
 	return "NO-FILL";
 }
 
@@ -104,31 +101,36 @@ color CFigure::StringColor(string s)const {
 		return IVORY;
 	if (s == "HONEYDEW")
 		return HONEYDEW;
-	return BLACK;
+	if (s == "PINK")
+		return PINK;
+	if (s == "MAROON")
+		return MAROON;
+	if (s == "PURPLE")
+		return PURPLE;
 }
 
 string CFigure::GetFillClr()
 {
 	if (FigGfxInfo.isFilled)
-		return colorToString(FigGfxInfo.FillClr);
+		return ColorString(FigGfxInfo.FillClr);
 	else
 		return "NON-FILLED";
 }
 
-string CFigure::colorToString(color c)
-{
-	if (c == BLACK) return "BLACK";
-	else if (c == BLUE) return "BLUE";
-	else if (c == WHITE) return "WHITE";
-	else if (c == RED) return "RED";
-	else if (c == YELLOW) return "YELLOW";
-	else if (c == GREEN) return "GREEN";
-	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
-	else if (c == MAGENTA) return "MAGENTA";
-	else if (c == TURQUOISE) return "TURQUOISE";
-	else if (c == SKYBLUE) return "SKYBLUE";
-	return "COLOR";
-}
+//string CFigure::colorToString(color c)
+//{
+//	if (c == BLACK) return "BLACK";
+//	else if (c == BLUE) return "BLUE";
+//	else if (c == WHITE) return "WHITE";
+//	else if (c == RED) return "RED";
+//	else if (c == YELLOW) return "YELLOW";
+//	else if (c == GREEN) return "GREEN";
+//	else if (c == LIGHTGOLDENRODYELLOW) return "LIGHTGOLDENRODYELLOW";
+//	else if (c == MAGENTA) return "MAGENTA";
+//	else if (c == TURQUOISE) return "TURQUOISE";
+//	else if (c == SKYBLUE) return "SKYBLUE";
+//	return "COLOR";
+//}
 
 void CFigure::HideShape() {
 	isHidden = true;
@@ -137,11 +139,3 @@ void CFigure::HideShape() {
 void CFigure::displayShape() {
 	isHidden = false;
 }
-
-//void CFigure::setGFX()
-//{
-//	this->FigGfxInfo.DrawClr = this->DrwColor;
-//	this->FigGfxInfo.FillClr = this->FillColor;
-//	this->FigGfxInfo.isFilled = this->IsFill;
-//	this->FigGfxInfo.BorderWdth = UI.PenWidth;
-//}

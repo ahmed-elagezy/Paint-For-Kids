@@ -272,7 +272,6 @@ void ApplicationManager::Resize_figure(GUI* pGUI, float size) const {
 	}
 }
 
-////////////////////////////////////////////////f,gbndg.bmkghl/,n/////////////////
 int ApplicationManager::getFigCount()const {
 	return FigList.size();
 }
@@ -437,7 +436,7 @@ ApplicationManager::~ApplicationManager()
 }
 
 //==================================================================================//
-//							     Save Function							            	//
+//							     Save   							            	//
 //==================================================================================//
 
 void ApplicationManager::saveAll(ofstream& Out) {
