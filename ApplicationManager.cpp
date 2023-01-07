@@ -419,13 +419,27 @@ void ApplicationManager::showAllFigure()
 //==================================================================================//
 
 //Draw all figures on the user interface
+//void ApplicationManager::UpdateInterface() const
+//{
+//	pGUI->ClearDrawArea();
+//	for (int i = 0; i < FigList.size(); i++)
+//		
+//	{
+//		FigList[i]->DrawMe(pGUI); 	//Call Draw function (virtual member fn)
+//	}	
+//
+//}
+
+
 void ApplicationManager::UpdateInterface() const
 {
 	pGUI->ClearDrawArea();
-	for(int i=0; i<FigList.size(); i++)
-	{
-		FigList[i]->DrawMe(pGUI); 	//Call Draw function (virtual member fn)
-	}	
+	for (int i = 0; i < FigList.size(); i++) {
+		if (!FigList[i]->getHiddenValue())
+		{
+			FigList[i]->DrawMe(pGUI);
+		}
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the interface

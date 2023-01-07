@@ -18,7 +18,7 @@ protected:
 	bool isHidden;
 	color DrwColor, FillColor;
 	bool IsFill;
-	bool shown;
+	bool shown = true;
 	
 	/// Add more parameters if needed.
 
