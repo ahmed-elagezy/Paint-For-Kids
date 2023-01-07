@@ -16,6 +16,7 @@
 #include "Actions/ActionLoad.h"
 #include "Actions/ToPlayMode.h"
 #include "Actions/PickByType.h"
+#include "Actions/pickByBoth.h"
 #include "Actions/BackToDraw.h"
 #include"Actions/PickByColor.h"
 #include <vector>
@@ -138,6 +139,10 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 
 		case P_BY_COLOR:  
 			newAct = new PickByColor(this);
+			break;
+
+		case P_BY_BOTH:
+			newAct = new PickByBoth(this);
 			break;
 
 		case TO_DRAW:

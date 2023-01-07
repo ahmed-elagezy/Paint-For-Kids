@@ -148,6 +148,7 @@
     <ClCompile Include="Actions\SendBack.cpp" />
     <ClCompile Include="Actions\BringFront.cpp" />
     <ClCompile Include="Actions\ToPlayMode.cpp" />
+    <ClCompile Include="C:\Users\GRAPHICS\Desktop\new1\Paint-For-Kids-master\Actions\pickByBoth.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\colors.cpp" />
@@ -215,6 +216,7 @@
     <ClInclude Include="Actions\SendBack.h" />
     <ClInclude Include="Actions\BringFront.h" />
     <ClInclude Include="Actions\ToPlayMode.h" />
+    <ClInclude Include="C:\Users\GRAPHICS\Desktop\new1\Paint-For-Kids-master\Actions\pickByBoth.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />

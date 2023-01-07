@@ -211,6 +211,9 @@
     <ClCompile Include="CMUgraphicsLib\colors.cpp">
       <Filter>CMUgraphicsLib</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\GRAPHICS\Desktop\new1\Paint-For-Kids-master\Actions\pickByBoth.cpp">
+      <Filter>Action Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h">
@@ -353,6 +356,11 @@
       <Filter>Action Classes</Filter>
     </ClInclude>
     <ClInclude Include="Actions\PickByColor.h">
+      <Filter>Action Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\SendBack.h" />
+    <ClInclude Include="Actions\BringFront.h" />
+    <ClInclude Include="C:\Users\GRAPHICS\Desktop\new1\Paint-For-Kids-master\Actions\pickByBoth.h">
       <Filter>Action Classes</Filter>
     </ClInclude>
   </ItemGroup>
