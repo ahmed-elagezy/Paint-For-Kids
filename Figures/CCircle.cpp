@@ -5,6 +5,8 @@
 
 CCircle::CCircle() {
 	this->Selected = false;
+	this->isHidden = false;
+
 }
 
 CCircle::CCircle(Point P1, Point P2, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)

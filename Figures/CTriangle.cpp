@@ -3,6 +3,8 @@
 
 CTriangle::CTriangle() {
 	this->Selected = false;
+	this->isHidden = false;
+
 }
 
 CTriangle::CTriangle(Point P1, Point P2,Point P3, GfxInfo FigureGfxInfo) :CFigure(FigureGfxInfo)

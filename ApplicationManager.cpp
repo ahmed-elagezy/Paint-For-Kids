@@ -15,6 +15,7 @@
 #include "Actions/ToPlayMode.h"
 #include "Actions/PickByType.h"
 #include "Actions/BackToDraw.h"
+#include"Actions/PickByColor.h"
 #include <vector>
 #include "iostream"
 #include "fstream"
@@ -27,7 +28,6 @@ ApplicationManager::ApplicationManager()
 	//Create Input and output
 	pGUI = new GUI;	
 	
-	FigCount = 0;
 	flag = 0;
 	//Create an array of figure pointers and set them to NULL		
 	//for(int i=0; i<MaxFigCount; i++)
@@ -126,6 +126,10 @@ Action* ApplicationManager::CreateAction(ActionType ActType)
 			newAct = new PickByType(this);
 			break;
 
+		case P_BY_COLOR:  
+			newAct = new PickByColor(this);
+			break;
+
 		case TO_DRAW:
 			newAct = new BackToDraw(this);
 			break;
@@ -159,7 +163,7 @@ void ApplicationManager::ExecuteAction(Action* &pAct)
 //Add a figure to the list of figures
 void ApplicationManager::AddFigure(CFigure* pFig)
 {
-	if(FigCount < MaxFigCount )
+	if(FigList.size() < MaxFigCount )
 		FigList.push_back(pFig);	
 }
 ////////////////////////////////////////////////////////////////////////////////////
@@ -249,6 +253,34 @@ void ApplicationManager::Resize_figure(GUI* pGUI, float size) const {
 	}
 }
 
+////////////////////////////////////////////////f,gbndg.bmkghl/,n/////////////////
+int ApplicationManager::getFigCount()const {
+	return FigList.size();
+}
+
+CFigure* ApplicationManager::getAnyFigure()
+{
+	if (FigList.size())
+	{
+		srand(time(NULL));
+		return FigList[rand() % FigList.size()];
+	}
+	return nullptr;
+}
+
+bool ApplicationManager::hasDifferentColors() {
+	for (int i = 0; i < FigList.size() - 1; i++) {
+		if (FigList[i]->GetFillClr() != FigList[i + 1]->GetFillClr())
+			return true;
+	}
+	return false;
+}
+
+CFigure* ApplicationManager::getFigList(int i) const
+{
+	return FigList[i];
+}
+
 bool ApplicationManager::AnySelected()
 {
 	for (int i = 0; i < FigList.size(); i++)
@@ -307,7 +339,7 @@ bool ApplicationManager::GetColor(color& inputColor)
 
 //void ApplicationManager::displayAllFigures()
 //{
-//	for (int i = 0; i < FigCount; i++) {
+//	for (int i = 0; i < FigList.size(); i++) {
 //		FigList[i]->displayShape();
 //	}
 //}
@@ -380,7 +412,7 @@ GUI *ApplicationManager::GetGUI() const
 //Destructor
 ApplicationManager::~ApplicationManager()
 {
-	for(int i=0; i<FigCount; i++)
+	for(int i=0; i<FigList.size(); i++)
 		delete FigList[i];
 	delete pGUI;	
 }
@@ -403,5 +435,5 @@ void ApplicationManager::saveAll(ofstream& Out) {
 void ApplicationManager::clearFigList() {
 	for (int i = 0; i < FigList.size(); i++)
 		FigList[i] = NULL;
-	FigCount = 0;
+	//FigList.size();
 }

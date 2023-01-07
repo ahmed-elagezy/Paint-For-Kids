@@ -1,10 +1,10 @@
 #ifndef CFIGURE_H
 #define CFIGURE_H
-#include <string>
-
-#include "..\defs.h"
+#include "..\DEFS.h"
 #include "..\GUI\GUI.h"
-#include <fstream>
+#include<fstream>
+#include<string>
+
 
 
 //Base class for all figures
@@ -40,6 +40,11 @@ public:
 	int getHiddenValue();
 	void show(bool x);     //radwa
 	virtual string getFigureName() const = 0;  ///radwa	
+
+
+	string CFigure::GetFillClr();
+	string CFigure::colorToString(color c);
+	void CFigure::displayShape();
 	
 
 
@@ -58,6 +63,8 @@ public:
 	/*void setGFX();*/
 	virtual void Save(ofstream &OutFile)=0;	//Save the figure parameters to the file
 	virtual void Load(ifstream &Infile)=0;	//Load the figure parameters to the file
+
+	void CFigure::HideShape();
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all figure info on the status bar
 };
