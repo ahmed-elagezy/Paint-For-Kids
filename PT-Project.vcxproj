@@ -143,12 +143,12 @@
     <ClCompile Include="Actions\ActionSave.cpp" />
     <ClCompile Include="Actions\ActionSelectShape.cpp" />
     <ClCompile Include="Actions\BackToDraw.cpp" />
+    <ClCompile Include="Actions\pickByBoth.cpp" />
     <ClCompile Include="Actions\PickByColor.cpp" />
     <ClCompile Include="Actions\PickByType.cpp" />
     <ClCompile Include="Actions\SendBack.cpp" />
     <ClCompile Include="Actions\BringFront.cpp" />
     <ClCompile Include="Actions\ToPlayMode.cpp" />
-    <ClCompile Include="C:\Users\GRAPHICS\Desktop\new1\Paint-For-Kids-master\Actions\pickByBoth.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\colors.cpp" />
@@ -211,12 +211,12 @@
     <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="Actions\ActionSelectShape.h" />
     <ClInclude Include="Actions\BackToDraw.h" />
+    <ClInclude Include="Actions\pickByBoth.h" />
     <ClInclude Include="Actions\PickByColor.h" />
     <ClInclude Include="Actions\PickByType.h" />
     <ClInclude Include="Actions\SendBack.h" />
     <ClInclude Include="Actions\BringFront.h" />
     <ClInclude Include="Actions\ToPlayMode.h" />
-    <ClInclude Include="C:\Users\GRAPHICS\Desktop\new1\Paint-For-Kids-master\Actions\pickByBoth.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />

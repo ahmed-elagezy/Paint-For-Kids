@@ -12,7 +12,7 @@ PickByBoth::PickByBoth(ApplicationManager* pApp) :Action(pApp)
 void PickByBoth::Execute()
 {
 	GUI* pGui = pManager->GetGUI();//making gui pinter
-	CFigure* randomFig=pManager->getRandomFigure();//getting a random figure from figure list
+	CFigure* randomFig=pManager->getAnyFigure();//getting a random figure from figure list
 
 	if (randomFig) //case that figure list is not empty
 	{
@@ -68,7 +68,7 @@ void PickByBoth::Execute()
 			string finalMsg = "exited game!";
 			pGui->PrintMessage(finalMsg);
 			Sleep(500);
-			pManager->displayAllFigures();
+			pManager->showAllFigure();
 		}
 		//case of selecting all matching figures
 		else 
@@ -77,7 +77,7 @@ void PickByBoth::Execute()
 				to_string(correctAns) + " ,wrong answers: " + to_string(wrongAns);
 			pGui->PrintMessage(finalMsg);
 			Sleep(500);
-			pManager->displayAllFigures();
+			pManager->showAllFigure();
 		}
 	}
 	//case of empty figure list
