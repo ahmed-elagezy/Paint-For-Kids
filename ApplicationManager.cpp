@@ -243,6 +243,7 @@ void ApplicationManager::Resize_figure(GUI* pGUI, float size) const {
 	{
 		if (FigList[i]->IsSelected())
 		{
+			/*cout << "resize figure";*/
 			FigList[i]->Resize(pGUI, size);
 		}
 	}

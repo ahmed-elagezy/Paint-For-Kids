@@ -92,7 +92,6 @@ void CHexagon::Resize(GUI* pGUI, float size)
 	{
 		Length = length_test;
 		Height = height_test;
-		//PrintInfo(pGUI);
 	}
 
 }

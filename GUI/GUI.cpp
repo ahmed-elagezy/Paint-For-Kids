@@ -1,5 +1,5 @@
 #include "GUI.h"
-
+#include <iostream>
 //constructor make necessary initializations
 GUI::GUI()
 {
@@ -160,12 +160,12 @@ ActionType GUI::MapInputToActionType() const
 			//If division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
 			switch (ClickedItemOrder)
 			{
-			case ITM_BACK:  return BACK;
+			case ITM_BACK:   return BACK;
 			case ITM_QUARTER: return QUARTER;
-			case ITM_HALF: return HALF;
-			case ITM_DOUBLE:   return DOUBLE1;
-			case ITM_QUADRUPLE: return QUADRUPLE;
-			default: return EMPTY;
+			case ITM_HALF:  return HALF;
+			case ITM_DOUBLE:  return DOUBLE1;
+			case ITM_QUADRUPLE:  return QUADRUPLE;
+			default: return  EMPTY;
 			}
 		}
 	}

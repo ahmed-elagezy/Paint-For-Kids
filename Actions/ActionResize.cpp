@@ -2,6 +2,7 @@
 #include "..\ApplicationManager.h"
 #include "..\GUI\GUI.h"
 #include "ActionResize.h"
+#include <iostream>
 
 ActionResize::ActionResize(ApplicationManager* pApp) :Action(pApp)
 {}
@@ -24,6 +25,7 @@ void ActionResize::Execute()
 
 			switch (pAct) {
 			case HALF:
+				/*cout << pAct;*/
 				pManager->Resize_figure(pGUI, 0.5);
 				pManager->UpdateInterface();
 				break;
