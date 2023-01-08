@@ -48,6 +48,7 @@ void CCircle::PrintInfo(GUI* pGUI, int id)  {
 		+ "), Radius: " + to_string(int(Radius));
 	pGUI->PrintMessage(message);
 }
+
 void CCircle::Resize(GUI* pGUI, float size)
 {
 

@@ -458,14 +458,14 @@ ApplicationManager::~ApplicationManager()
 //							     Save   							            	//
 //==================================================================================//
 
-void ApplicationManager::saveAll(ofstream& Out) {
+void ApplicationManager::saveAll(ofstream& savedFile) {
 
-	if (Out.is_open())
+	if (savedFile.is_open())
 	{
-		Out << to_string(FigList.size()) << "\n";
+		savedFile << to_string(FigList.size()) << "\n"; //Write number of figures in the file
 
 		for (int i = 0; i < FigList.size(); i++)
-			FigList[i]->Save(Out);
+			FigList[i]->Save(savedFile);
 	}
 }
 
@@ -483,9 +483,9 @@ void ApplicationManager::SendToBack(int selectedIndex)
 {
 	if (selectedIndex != 0)
 	{
-		CFigure* spare = FigList[0];
-		FigList[0] = FigList[selectedIndex];
-		FigList[selectedIndex] = spare;
+		CFigure* tmp = FigList[0];//Back Figure
+		FigList[0] = FigList[selectedIndex];//Swap Back Figure with our selected figure
+		FigList[selectedIndex] = tmp;
 	}
 }
 
@@ -497,8 +497,8 @@ void ApplicationManager::BringToFront(int selectedIndex)
 {
 	if (selectedIndex != FigList.size() - 1)
 	{
-		CFigure* tmp = FigList[FigList.size() - 1];
-		FigList[FigList.size() - 1] = FigList[selectedIndex];
+		CFigure* tmp = FigList[FigList.size() - 1];//Front Figure
+		FigList[FigList.size() - 1] = FigList[selectedIndex];//Swap Front Figure with our selected figure
 		FigList[selectedIndex] = tmp;
 	}
 }
