@@ -43,7 +43,7 @@ void CRectangle::PrintInfo(GUI* pGUI,int id) {
 		+ to_string(abs(ul.x - lr.x)) + ", Width: " + to_string(abs(ul.y - lr.y));
 	pGUI->PrintMessage(message);
 }
-void CRectangle::Resize(GUI* pGUI,float resizeFactor)
+void CRectangle::Resize(GUI* pGUI,float size)
 {
 	Point Center;
 	Center.x = (ul.x + lr.x) / 2;
@@ -52,11 +52,11 @@ void CRectangle::Resize(GUI* pGUI,float resizeFactor)
 	int horizontal = abs(ul.x - Center.x);
 	int vertical = abs(ul.y - Center.y);
 
-	ul.x = Center.x + horizontal * resizeFactor;
-	lr.x = Center.x - horizontal * resizeFactor;
+	ul.x = Center.x + horizontal * size;
+	lr.x = Center.x - horizontal * size;
 
-	ul.y = Center.y + vertical * resizeFactor;
-	lr.y = Center.y - vertical * resizeFactor;
+	ul.y = Center.y + vertical * size;
+	lr.y = Center.y - vertical * size;
 }
 
 void CRectangle::Save(ofstream& savedFile) {
@@ -94,3 +94,4 @@ void CRectangle::Load(ifstream& savedFile)
 	this->FigGfxInfo.BorderWdth = 3;
 	this->Selected = false;
 }
+

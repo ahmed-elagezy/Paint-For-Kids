@@ -226,14 +226,6 @@ int ApplicationManager::getSelectedFigure()
 	return -1;
 }
 
-//int ApplicationManager::getFigCount()const {
-//	return FigList.size();
-//}
-//
-//CFigure* ApplicationManager::getFigList(int i) const
-//{
-//	return FigList[i];
-//}
 
 void ApplicationManager::changeDrawColor(color drawClr)
 {
@@ -271,7 +263,6 @@ void ApplicationManager::Resize_figure(GUI* pGUI, float size) const {
 	{
 		if (FigList[i]->IsSelected())
 		{
-			/*cout << "resize figure";*/
 			FigList[i]->Resize(pGUI, size);
 		}
 	}
@@ -360,14 +351,8 @@ bool ApplicationManager::GetColor(color& inputColor)
 	return isColor;
 }
 
-//void ApplicationManager::displayAllFigures()
-//{
-//	for (int i = 0; i < FigList.size(); i++) {
-//		FigList[i]->displayShape();
-//	}
-//}
 
-string ApplicationManager::getRandomFigure(int& count)		//radwa
+string ApplicationManager::getRandomFigure(int& count)
 {
 	string figureName;
 	int rondom;
@@ -440,6 +425,14 @@ void ApplicationManager::UpdateInterface() const
 			FigList[i]->DrawMe(pGUI);
 		}
 	}
+	if (UI.InterfaceMode == MODE_DRAW)
+		pGUI->CreateDrawToolBar();
+	else if (UI.InterfaceMode == MODE_PLAY)
+		pGUI->CreatePlayToolBar();
+	else if (UI.InterfaceMode == MODE_COLOR)
+		pGUI->CreateColorToolBar();
+	else if (UI.InterfaceMode == MODE_SIZE)
+		pGUI->CreateSizeBar();
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the interface

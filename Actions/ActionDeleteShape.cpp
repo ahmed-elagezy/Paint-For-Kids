@@ -12,7 +12,6 @@ void ActionDeleteShape::Execute()
 	GUI* pGUI = pManager->GetGUI();
 
 	pManager->DeleteShape();
-	pGUI->ClearDrawArea();
 	pGUI->ClearStatusBar();
 
 

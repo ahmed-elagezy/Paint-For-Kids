@@ -6,7 +6,7 @@ GUI::GUI()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 	
-	UI.width = 1300;
+	UI.width = 1370;
 	UI.height = 700;
 	UI.wx = 5;
 	UI.wy =5;
@@ -28,7 +28,7 @@ GUI::GUI()
 	//Create the output window
 	pWind = CreateWind(UI.width, UI.height, UI.wx, UI.wy);
 	//Change the title
-	pWind->ChangeTitle("HAMBOLA");
+	pWind->ChangeTitle("G03 - Paint For Kids - OOP Project");
 	
 	CreateDrawToolBar();
 	CreateStatusBar();

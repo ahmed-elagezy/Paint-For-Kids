@@ -61,14 +61,14 @@ void PickByColor::Execute()
 				{
 					if (fig->GetFillClr() == playColor)
 					{
-						fig->HideShape();
+						fig->show(false);
 						noOfPlayFigure--;
 						pManager->UpdateInterface();
 						score(1, currentPlayMsg);
 					}
 					else
 					{
-						fig->HideShape();
+						//fig->show(false);
 						pManager->UpdateInterface();
 						score(2, currentPlayMsg);
 					}

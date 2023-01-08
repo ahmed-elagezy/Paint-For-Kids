@@ -36,6 +36,7 @@ void ActionSelectShape::Execute()
 		{
 			selectedFig->SetSelected(true);
 			selectedFig->PrintInfo(pGUI, pManager->GetIndex(selectedFig));
+			//Sleep(1000);
 
 		}
 	}

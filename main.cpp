@@ -6,7 +6,6 @@ string PickByColor::lastColor = "";
 
 int main()
 {
-	//Comment from Mohammed Alaa
 	ApplicationManager AppManager;
 	AppManager.Run();		
 	return 0;
