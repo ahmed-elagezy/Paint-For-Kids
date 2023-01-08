@@ -95,7 +95,7 @@ void CSquare::Save(ofstream& savedFile) {
 			<< "\t" << TopLeftCorner.x
 			<< "\t" << TopLeftCorner.y
 			<< "\t" << length
-			<< "\t" << ColorString(this->FigGfxInfo.DrawClr);
+			<< "\t" << ColorString(this->FigGfxInfo.DrawClr); //Figure graphis info
 		if (!this->FigGfxInfo.isFilled)
 			savedFile << "\t" << "NO-FILL";
 		else
@@ -109,17 +109,16 @@ void CSquare::Load(ifstream& savedFile)
 {
 	string drwColor, fillColor;
 	savedFile >> ID >> TopLeftCorner.x >> TopLeftCorner.y >> length >> drwColor >> fillColor;
-	FigGfxInfo.DrawClr = this->StringColor(drwColor);
+	FigGfxInfo.DrawClr = StringColor(drwColor);
 	if (fillColor == "NO-FILL")
 	{
 		FigGfxInfo.isFilled = false;
 	}
 	else
 	{
-		FigGfxInfo.FillClr = this-> StringColor(fillColor);
 		FigGfxInfo.isFilled = true;
+		FigGfxInfo.FillClr = StringColor(fillColor);
 	}
-	this->FigGfxInfo.BorderWdth = 3;
-	this->Selected = false;
-//setGFX();
+	FigGfxInfo.BorderWdth = 3;
+	Selected = false;
 }

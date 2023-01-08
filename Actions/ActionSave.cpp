@@ -20,6 +20,12 @@ void ActionSave::Execute() {
 	ReadParameters();
 	GUI* pGUI = pManager->GetGUI();
 	ofstream savedFile;
+
+	while (fileName == "") {
+		pGUI->PrintMessage("Sorry, Enter Valid file name"); //Read file name
+		fileName = pGUI->GetSrting();
+	}
+
 	savedFile.open("Saved\\" + fileName + ".txt"); //Create txt file
 	savedFile << ColorString(UI.DrawColor)
 		<< "\t" << ColorString(UI.FillColor)

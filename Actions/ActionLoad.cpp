@@ -17,7 +17,7 @@ ActionLoad::ActionLoad(ApplicationManager* pApp) :Action(pApp) {
 void ActionLoad::ReadParameters() {
 	GUI* pGUI = pManager->GetGUI();
 	pGUI->ClearStatusBar();
-	pGUI->PrintMessage("Enter file name"); //Read file name
+	pGUI->PrintMessage("Enter file name"); //Read stored file name
 	fileName = pGUI->GetSrting();
 }
 
@@ -28,50 +28,51 @@ void ActionLoad::Execute() {
 	CFigure* figure;
 	ReadParameters();
 	GUI* pGUI = pManager->GetGUI();
-	if (fileName == "") {
-		pGUI->PrintMessage("Not Valid");
+
+	while (fileName == "") {
+		pGUI->PrintMessage("Sorry, Enter Valid file name"); //Read file name
+		fileName = pGUI->GetSrting();
+	}
+
+	loadedFile.open("Saved\\" + fileName + ".txt"); //Bring the txt file to read from it
+	if (loadedFile.fail()) {
+		pGUI->PrintMessage("File Not Exist");
 	}
 	else {
-		loadedFile.open("Saved\\" + fileName + ".txt");
-		if (loadedFile.fail()) {
-			pGUI->PrintMessage("File Not Exist");
-		}
-		else {
-			loadedFile >> drwColor >> fillColor >> bgColor;
-			UI.DrawColor = StringColor(drwColor);
-			UI.FillColor = StringColor(fillColor);
-			UI.BkGrndColor = StringColor(bgColor);
+		loadedFile >> drwColor >> fillColor >> bgColor;
+		UI.DrawColor = StringColor(drwColor); //Apply colors from file to App
+		UI.FillColor = StringColor(fillColor);
+		UI.BkGrndColor = StringColor(bgColor);
 
-			pManager->clearFigList();
-			loadedFile >> figCount;
+		loadedFile >> figCount;
 
-			while (figCount) {
-				loadedFile >> shapeName;
-				if (shapeName == "SQUARE") {
-					figure = new CSquare;
-				}
-				else if (shapeName == "RECTANGLE") {
-					figure = new CRectangle;
-				}
-				else if (shapeName == "HEXAGON") {
-					figure = new CHexagon;
-				}
-				else if (shapeName == "TRIANGLE") {
-					figure = new CTriangle;
-				}
-				else if (shapeName == "CIRCLE") {
-					figure = new CCircle;
-				}
-				figure->Load(loadedFile);
-				pManager->AddFigure(figure);
-				figCount--;
+		while (figCount) {
+			loadedFile >> shapeName;
+			if (shapeName == "SQUARE") {
+				figure = new CSquare;
 			}
-			pManager->UpdateInterface();
-			pGUI->ClearStatusBar();
-			pGUI->PrintMessage("Shapes loaded Successfully");
+			else if (shapeName == "RECTANGLE") {
+				figure = new CRectangle;
+			}
+			else if (shapeName == "HEXAGON") {
+				figure = new CHexagon;
+			}
+			else if (shapeName == "TRIANGLE") {
+				figure = new CTriangle;
+			}
+			else if (shapeName == "CIRCLE") {
+				figure = new CCircle;
+			}
+			figure->Load(loadedFile);
+			pManager->AddFigure(figure);
+			figCount--;
 		}
+		pManager->UpdateInterface();
+		pGUI->ClearStatusBar();
+		pGUI->PrintMessage("Shapes loaded Successfully");
 	}
 }
+
 
 
 color ActionLoad::StringColor(string s)const {
@@ -107,4 +108,5 @@ color ActionLoad::StringColor(string s)const {
 		return MAROON;
 	if (s == "PURPLE")
 		return PURPLE;
+	return BLACK;
 }
